@@ -25,7 +25,7 @@ button { font: inherit; }
 .header-link span { margin-left: 8px; }
 .menu-toggle { display: none; }
 .hero { min-height: 780px; height: 100svh; max-height: 1100px; position: relative; display: flex; align-items: center; padding: 120px 11vw 100px; overflow: hidden; background: #111d23; }
-.hero-image { position: absolute; inset: 0; background: url("https://github.com/aaetheriall/aaetheriall.github.io/blob/main/assets/images/vir_2_azteks_high_quality_inspect.png?raw=true") center 52%/cover; transform: scale(1.04); animation: slow-zoom 22s ease-in-out infinite alternate; }
+.hero-image { position: absolute; inset: 0; background: url("https://ibb.co/hxprSP6H") center 52%/cover; transform: scale(1.04); animation: slow-zoom 22s ease-in-out infinite alternate; }
 .hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg,rgba(5,14,19,.78) 0%,rgba(5,14,19,.38) 58%,rgba(5,14,19,.18) 100%), linear-gradient(0deg,#091116 0%,transparent 32%,rgba(6,15,20,.25) 100%); }
 .hero-content { position: relative; z-index: 1; max-width: 780px; }
 .eyebrow { font-size: 9px; letter-spacing: .23em; color: #c2d0c7; font-weight: 600; }
