@@ -1,153 +1,159 @@
-/* AETHERIAL — cinematic personal archive */
-:root {
-  --ink: #e9ece9;
-  --muted: #a8b0ad;
-  --dim: #788480;
-  --night: #091116;
-  --line: rgba(229,238,233,.16);
-  --glass: rgba(17,31,36,.52);
-  --serif: Georgia, "Times New Roman", serif;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-body { margin: 0; background: var(--night); color: var(--ink); font-family: "DM Sans", sans-serif; font-size: 15px; line-height: 1.65; overflow-x: hidden; }
-a { color: inherit; text-decoration: none; }
-button { font: inherit; }
-.ambient { position: fixed; width: 42vw; height: 42vw; border-radius: 50%; filter: blur(110px); opacity: .12; pointer-events: none; z-index: -1; }
-.ambient-one { background: #52756d; top: 12%; left: -20%; }
-.ambient-two { background: #52637c; bottom: 5%; right: -25%; }
-.site-header { height: 82px; position: absolute; z-index: 10; top: 0; left: 0; width: 100%; padding: 0 5.5vw; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.12); }
-.wordmark { font: 600 13px "Manrope", sans-serif; letter-spacing: .22em; white-space: nowrap; }
-.wordmark span { font-size: 8px; vertical-align: top; margin-left: 3px; color: #b4c1b8; }
-.nav { display: flex; gap: clamp(18px, 3vw, 42px); }
-.nav a, .header-link { color: rgba(242,246,242,.76); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; transition: color .25s; }
-.nav a:hover, .header-link:hover { color: white; }
-.header-link span { margin-left: 8px; }
-.menu-toggle { display: none; }
-.hero { min-height: 780px; height: 100svh; max-height: 1100px; position: relative; display: flex; align-items: center; padding: 120px 11vw 100px; overflow: hidden; background: #111d23; }
-.hero-image { position: absolute; inset: 0; background: url("assets/images/vir_2_azteks_high_quality_inspect.png") center 52%/cover; transform: scale(1.04); animation: slow-zoom 22s ease-in-out infinite alternate; }
-.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg,rgba(5,14,19,.78) 0%,rgba(5,14,19,.38) 58%,rgba(5,14,19,.18) 100%), linear-gradient(0deg,#091116 0%,transparent 32%,rgba(6,15,20,.25) 100%); }
-.hero-content { position: relative; z-index: 1; max-width: 780px; }
-.eyebrow { font-size: 9px; letter-spacing: .23em; color: #c2d0c7; font-weight: 600; }
-.hero .eyebrow { display: flex; align-items: center; gap: 13px; margin-bottom: 28px; }
-.eyebrow-line { display: inline-block; width: 32px; height: 1px; background: #b7c6bb; }
-h1, h2, h3, p { margin-top: 0; }
-h1, h2 { font-family: "Manrope", sans-serif; font-weight: 300; letter-spacing: -.065em; line-height: 1.02; }
-h1 { font-size: clamp(66px, 9.5vw, 142px); margin-bottom: 27px; }
-h1 em, h2 em { font-family: var(--serif); font-weight: 400; letter-spacing: -.055em; }
-.hero-copy { max-width: 390px; color: rgba(240,244,239,.76); font-size: 15px; line-height: 1.8; }
-.hero-actions { display: flex; align-items: center; gap: 30px; margin-top: 38px; }
-.button { display: inline-flex; align-items: center; gap: 32px; padding: 13px 18px; font-size: 10px; text-transform: uppercase; letter-spacing: .13em; transition: transform .25s, background .25s; }
-.button:hover { transform: translateY(-3px); }
-.button-light { background: rgba(239,244,239,.92); color: #17211f; }
-.button span { font-size: 16px; }
-.text-link, .arrow-link { font-size: 11px; color: rgba(240,244,239,.82); border-bottom: 1px solid rgba(240,244,239,.4); padding-bottom: 7px; }
-.text-link span, .arrow-link span { margin-left: 10px; }
-.hero-bottom { position: absolute; z-index: 1; bottom: 35px; left: 5.5vw; right: 5.5vw; display: flex; justify-content: space-between; color: rgba(235,241,236,.62); font-size: 8px; letter-spacing: .18em; }
-.hero-bottom a span { margin-left: 10px; font-size: 13px; }
-.hero-index { position: absolute; z-index: 1; right: 5.5vw; top: 50%; writing-mode: vertical-rl; font-size: 9px; letter-spacing: .18em; color: rgba(255,255,255,.72); }
-.hero-index i { display: inline-block; width: 1px; height: 52px; background: rgba(255,255,255,.55); margin: 12px 0; }
-.section-wrap { padding: 125px 11vw; position: relative; }
-.section-kicker { display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 17px; color: #9daaa5; font-size: 9px; letter-spacing: .17em; }
-.intro-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 10vw; padding-top: 85px; align-items: end; }
-h2 { font-size: clamp(44px, 6.2vw, 82px); margin-bottom: 0; }
-.intro-text { max-width: 390px; color: var(--muted); font-size: 14px; line-height: 1.9; }
-.intro-text p + p { margin-top: 20px; }
-.arrow-link { display: inline-block; margin-top: 16px; color: #dbe4de; }
-.feature-section { background: linear-gradient(180deg,rgba(255,255,255,.015),transparent); }
-.feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9vw; padding-top: 75px; align-items: center; }
-.feature-heading h2 { margin: 18px 0 25px; }
-.muted { color: var(--muted); max-width: 390px; font-size: 13px; line-height: 1.9; }
-.glass-card { min-height: 320px; padding: 30px; border: 1px solid rgba(226,238,230,.2); border-radius: 3px; background: linear-gradient(135deg,rgba(255,255,255,.11),rgba(255,255,255,.025)); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); box-shadow: 0 25px 80px rgba(0,0,0,.18); display: flex; flex-direction: column; justify-content: space-between; position: relative; }
-.card-number, .tag, .project-meta { font-size: 9px; letter-spacing: .16em; color: #9eafa6; }
-.tag { color: #b8c7bd; }
-.glass-card h3 { font: 300 32px "Manrope", sans-serif; letter-spacing: -.04em; margin: 12px 0; }
-.glass-card p, .project-card p { color: var(--muted); font-size: 12px; line-height: 1.8; max-width: 350px; }
-.circle-arrow { position: absolute; bottom: 28px; right: 28px; border: 1px solid rgba(255,255,255,.35); width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; transition: background .2s,color .2s; }
-.circle-arrow:hover { background: white; color: #10191a; }
-.projects { background: #0c171c; }
-.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; padding: 72px 0 48px; }
-.section-heading .muted { max-width: 260px; }
-.project-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 22px; }
-.project-art { height: 270px; position: relative; overflow: hidden; background: #1c2b2d; margin-bottom: 20px; }
-.project-large .project-art { height: 350px; }
-.art-one { background: radial-gradient(ellipse at 48% 52%,#6b8276 0%,#293e3d 23%,#122326 65%,#0c171c 100%); }
-.art-orbit { position: absolute; width: 210px; height: 210px; border: 1px solid rgba(223,236,220,.55); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%,-50%) rotate(-25deg) scaleY(.45); box-shadow: 0 0 0 28px rgba(255,255,255,.025),0 0 0 58px rgba(255,255,255,.02); }
-.art-dot { position: absolute; width: 9px; height: 9px; border-radius: 50%; background: #e2e7d8; top: 40%; left: 63%; box-shadow: 0 0 30px 10px rgba(230,238,220,.3); }
-.art-two { background: linear-gradient(135deg,#243b40,#18282f 55%,#101b20); }
-.art-grid { position: absolute; inset: 0; opacity: .45; background-image: linear-gradient(rgba(213,232,220,.15) 1px,transparent 1px),linear-gradient(90deg,rgba(213,232,220,.15) 1px,transparent 1px); background-size: 30px 30px; transform: perspective(300px) rotateX(35deg) scale(1.5); }
-.art-three { background: radial-gradient(circle at 50% 50%,#52645b,#273a39 35%,#122126 75%); }
-.art-rings { position: absolute; inset: 15%; border: 1px solid rgba(229,237,224,.45); border-radius: 50%; box-shadow: 0 0 0 22px rgba(255,255,255,.035),0 0 0 45px rgba(255,255,255,.025),0 0 0 70px rgba(255,255,255,.018); }
-.art-label { position: absolute; bottom: 18px; left: 20px; font-size: 8px; letter-spacing: .18em; color: rgba(239,245,237,.7); }
-.project-meta { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 8px; }
-.project-card h3 { font: 400 19px "Manrope", sans-serif; letter-spacing: -.03em; margin-bottom: 8px; }
-.project-card p { max-width: 310px; }
-.interests-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10vw; padding-top: 80px; }
-.interest-list { border-top: 1px solid var(--line); }
-.interest-list div { display: grid; grid-template-columns: 42px 1fr 20px; align-items: center; border-bottom: 1px solid var(--line); padding: 17px 0; }
-.interest-list span { color: #87958f; font-size: 9px; }
-.interest-list p { margin: 0; font-size: 13px; color: #dce3de; }
-.interest-list b { font-weight: 400; color: #9baaa1; }
-.journal { padding-top: 60px; }
-.journal-panel { margin-top: 55px; min-height: 350px; padding: 55px; border: 1px solid rgba(230,239,230,.17); background: linear-gradient(120deg,rgba(128,151,139,.13),rgba(255,255,255,.025)); display: grid; grid-template-columns: 1fr .7fr; gap: 10vw; align-items: center; position: relative; overflow: hidden; }
-.journal-panel h2 { font-size: clamp(38px,4.5vw,62px); }
-.journal-copy { color: var(--muted); font-size: 13px; line-height: 1.9; max-width: 330px; position: relative; z-index: 1; }
-.journal-mark { position: absolute; right: 35px; bottom: -105px; font: italic 360px var(--serif); color: rgba(255,255,255,.025); pointer-events: none; }
-.closing { min-height: 600px; position: relative; display: flex; flex-direction: column; justify-content: space-between; padding: 110px 5.5vw 30px; overflow: hidden; }
-.closing-bg { position: absolute; inset: 0; background: linear-gradient(90deg,rgba(5,13,17,.88),rgba(5,13,17,.42)),url("https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=2200&q=85") center/cover; opacity: .6; }
-.closing-content { position: relative; z-index: 1; padding-left: 5.5vw; }
-.closing-content h2 { font-size: clamp(56px,8vw,105px); margin: 25px 0 35px; }
-.footer { position: relative; z-index: 1; border-top: 1px solid rgba(255,255,255,.2); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; color: rgba(235,242,237,.58); font-size: 8px; letter-spacing: .16em; }
-.reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-@keyframes slow-zoom { from { transform: scale(1.04); } to { transform: scale(1.12); } }
-@media (max-width: 850px) {
-  .site-header { padding: 0 6vw; }
-  .nav { gap: 15px; }
-  .nav a { font-size: 9px; }
-  .header-link { display: none; }
-  .section-wrap { padding: 95px 7vw; }
-  .hero { padding-left: 8vw; }
-  .intro-grid, .feature-grid, .interests-grid { gap: 45px; }
-  .project-grid { grid-template-columns: 1fr 1fr; }
-  .project-large { grid-column: span 2; }
-  .project-large .project-art { height: 300px; }
-  .journal-panel { padding: 35px; gap: 35px; }
-}
-@media (max-width: 620px) {
-  .site-header { height: 70px; }
-  .menu-toggle { display: flex; width: 38px; height: 38px; flex-direction: column; justify-content: center; gap: 6px; border: 1px solid rgba(255,255,255,.3); background: rgba(12,24,28,.35); padding: 10px; }
-  .menu-toggle span { height: 1px; width: 100%; background: white; }
-  .nav { display: none; position: absolute; top: 69px; left: 0; right: 0; padding: 24px 7vw; background: rgba(8,18,22,.95); backdrop-filter: blur(18px); flex-direction: column; gap: 20px; border-bottom: 1px solid var(--line); }
-  .nav.open { display: flex; }
-  .nav a { font-size: 11px; }
-  .hero { min-height: 720px; height: 92svh; padding: 120px 7vw 100px; }
-  .hero-image { background-position: 58% center; }
-  h1 { font-size: clamp(60px,16vw,90px); }
-  .hero-copy { font-size: 13px; max-width: 310px; }
-  .hero-actions { align-items: flex-start; flex-direction: column; gap: 22px; }
-  .hero-bottom { left: 7vw; right: 7vw; bottom: 25px; font-size: 7px; }
-  .hero-bottom span { max-width: 170px; }
-  .hero-bottom a { text-align: right; }
-  .hero-index { display: none; }
-  .section-wrap { padding: 78px 7vw; }
-  .section-kicker { font-size: 7px; gap: 15px; }
-  .intro-grid, .feature-grid, .interests-grid { grid-template-columns: 1fr; padding-top: 55px; gap: 30px; }
-  h2 { font-size: clamp(43px,12vw,64px); }
-  .glass-card { min-height: 280px; }
-  .section-heading { display: block; padding: 55px 0 35px; }
-  .section-heading .muted { margin-top: 20px; }
-  .project-grid { grid-template-columns: 1fr; gap: 35px; }
-  .project-large { grid-column: auto; }
-  .project-large .project-art, .project-art { height: 250px; }
-  .journal-panel { grid-template-columns: 1fr; padding: 30px 24px; gap: 20px; }
-  .journal-mark { font-size: 230px; bottom: -65px; }
-  .closing { min-height: 540px; padding: 85px 7vw 25px; }
-  .closing-content { padding-left: 0; }
-  .footer { flex-wrap: wrap; gap: 18px; }
-  .footer > span:nth-child(2) { display: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-  .reveal { opacity: 1; transform: none; }
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a1117">
+  <meta name="description" content="A personal space for research, projects, interests and ideas.">
+  <title> BloxChanger — A new era of skin changers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/script.js"></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="Aetherial home">BloxChanger<span>®</span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#interests">Interests</a>
+      <a href="#journal">Journal</a>
+    </nav>
+    <a class="header-link" href="https://discord.gg/MNvu7mwjzk">Explore the community <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-image" role="img" aria-label="hewwo, aetherial hewe :3 (ITS NOT ME ITS A SKINCRAWLER)"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span> THE BEST NON-EXPLOIT SKINCHANGER FOR BLOXSTRIKE</p>
+        <h1>THE<br>Bloxstrike <em>Skinchanger.</em></h1>
+        <p class="hero-copy">An open source skin changer for Bloxstrike.</p>
+        <div class="hero-actions">
+          <a class="button button-light" href="#about">Check it out! <span>↘</span></a>
+          <a class="text-link" href="#projects">See how it works <span>↗</span></a>
+        </div>
+      </div>
+      <div class="hero-bottom">
+        <span>THE BEST NON-BANNABLE(but prohibited, non-bannable is a lie) SKINCHANGER · ALWAYS IN PROGRESS</span>
+        <a href="#about" aria-label="Scroll to about">SCROLL TO EXPLORE <span>↓</span></a>
+      </div>
+      <div class="hero-index">01 <i></i> 06</div>
+    </section>
+
+    <section class="intro section-wrap" id="about">
+      <div class="section-kicker reveal"><span>01 / ABOUT</span><span>A LITTLE CONTEXT</span></div>
+      <div class="intro-grid">
+        <h2 class="reveal">We still going<br><em>Skinchanger aura.</em></h2>
+        <div class="intro-text reveal">
+          <p></p>
+          <p></p>
+          <a class="arrow-link" href="https://github.com/aaetheriall">A little more about the project <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-section section-wrap" id="research">
+      <div class="section-kicker reveal"><span>02 / QUESTIONS</span><span>QUESTIONS, THEN ANSWERS</span></div>
+      <div class="feature-grid">
+        <div class="feature-heading reveal">
+          <p class="eyebrow">FOLLOW THE QUESTION</p>
+          <h2>Curiosity<br>with <em>answers.</em></h2>
+          <p class="muted">We are open for questions or problems.</p>
+        </div>
+        <div class="glass-card research-card reveal">
+          <span class="card-number">R — 001</span>
+          <div>
+            <span class="tag">RESEARCH NOTE</span>
+            <h3>Questions in progress</h3>
+            <p>Make a question about something you are curious about.</p>
+          </div>
+          <a href="https://discord.gg/kY8wcsds" class="circle-arrow" aria-label="Ask about research">↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects section-wrap" id="projects">
+      <div class="section-kicker reveal"><span>03 / WHAT IT IS</span><span>HOW IT WORKS</span></div>
+      <div class="section-heading reveal">
+        <h2> Asset <em>replacement.</em></h2>
+        <p class="muted">The trick behind it all.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card project-large reveal">
+          <div class="project-art art-one"><span class="art-orbit"></span><span class="art-dot"></span><span class="art-label">01 / BEHIND IT ALL</span></div>
+          <div class="project-meta"><span>CORE 001</span><span>THE BACKEND</span></div>
+          <h3>Fleasion:</h3>
+          <p>Fleasion replaces Roblox game assets in real time on Windows, macOS and Linux (Sober). It runs a local proxy between Roblox and its servers, so you can swap textures, audio, meshes, animations and other assets before they reach the game client. It is what powers the skin changer. </p>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-art art-two"><span class="art-grid"></span><span class="art-label">02 / WHAT MAKES IT WORK</span></div>
+          <div class="project-meta"><span>UNIT 002</span><span>THE MAGIC</span></div>
+          <h3>The config:</h3>
+          <p>It tells fleasion WHAT to change. It's how the skins change!</p>
+          <p>It is a JSON file that contains a list of asset IDs and their replacements. Completely open-source, just like fleasion.</p>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-art art-three"><span class="art-rings"></span><span class="art-label">03 / FINE-TUNING</span></div>
+          <div class="project-meta"><span>PROJECT 003</span><span>OPTIONS</span></div>
+          <h3>Where YOU come in!</h3>
+          <p>Since the config is open-source, you can customize it to your liking and contribute improvements back to the project.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="interests section-wrap" id="interests">
+      <div class="section-kicker reveal"><span>04 / CREDITS</span><span>RECOGNITION AS IT SHOULD</span></div>
+      <div class="interests-grid">
+        <h2 class="reveal">Many threads.<br><em>One curious team.</em></h2>
+        <div class="interest-list reveal">
+          <div><span>Main developer:</span><p>aetherial</p><b>↗</b></div>
+          <div><span>Secondary developer</span><p>Skulls</p><b>↗</b></div>
+          <div><span>Big contributor</span><p>Crazy</p><b>↗</b></div>
+          <div><span>Contributor</span><p>Spencer</p><b>↗</b></div>
+          <div><span>Contributor</span><p>Aash</p><b>↗</b></div>
+          <div><span>YOU</span><p>You could contribute to the project as well!</p><b>↗</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="journal section-wrap" id="journal">
+      <div class="section-kicker reveal"><span>05 / INSTALLATION</span><span>HOW TO SET IT UP</span></div>
+      <div class="journal-panel reveal">
+        <div>
+          <p class="eyebrow">THE TWO MASSIVE DEPENDENCIES</p>
+          <h2>~ Fleasion<br><em>~ The config</em></h2>
+        </div>
+        <div class="journal-copy">
+          <p>Here is the repository for fleasion. We are not affiliated with fleasion, but we love them. The config is available in our discord server.</p>
+          <a class="arrow-link" href="https://github.com/fleasion/Fleasion/">Official Fleasion repo <span>↗</span></a>
+        </div>
+        <span class="journal-mark">goat</span>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="closing-bg"></div>
+      <div class="closing-content reveal">
+        <p class="eyebrow">THE NEXT CHAPTER IS UNWRITTEN</p>
+        <h2>Stay curious.<br><em>Keep exploring.</em></h2>
+        <a class="button button-light" href="mailto:hello@example.com">Start a conversation <span>↗</span></a>
+      </div>
+      <footer class="footer">
+        <a class="wordmark" href="#home">BloxChanger<span>®</span></a>
+        <span>A skinchanger made by the community, for the community.</span>
+        <span>© <span id="year"></span> · MADE TO CHANGE (skins lol)</span>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
