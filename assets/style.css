@@ -94,7 +94,7 @@ h2 { font-size: clamp(44px, 6.2vw, 82px); margin-bottom: 0; }
 .journal-copy { color: var(--muted); font-size: 13px; line-height: 1.9; max-width: 330px; position: relative; z-index: 1; }
 .journal-mark { position: absolute; right: 35px; bottom: -105px; font: italic 360px var(--serif); color: rgba(255,255,255,.025); pointer-events: none; }
 .closing { min-height: 600px; position: relative; display: flex; flex-direction: column; justify-content: space-between; padding: 110px 5.5vw 30px; overflow: hidden; }
-.closing-bg { position: absolute; inset: 0; background: linear-gradient(90deg,rgba(5,13,17,.88),rgba(5,13,17,.42)),url("https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=2200&q=85") center/cover; opacity: .6; }
+.closing-bg { position: absolute; inset: 0; background: linear-gradient(90deg,rgba(5,13,17,.88),rgba(5,13,17,.42)),url("https://avatars.githubusercontent.com/u/186699266?s=200&v=4") center/cover; opacity: .6; }
 .closing-content { position: relative; z-index: 1; padding-left: 5.5vw; }
 .closing-content h2 { font-size: clamp(56px,8vw,105px); margin: 25px 0 35px; }
 .footer { position: relative; z-index: 1; border-top: 1px solid rgba(255,255,255,.2); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; color: rgba(235,242,237,.58); font-size: 8px; letter-spacing: .16em; }
